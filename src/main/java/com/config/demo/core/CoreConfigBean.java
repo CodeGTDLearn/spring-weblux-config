@@ -1,29 +1,24 @@
 package com.config.demo.core;
 
-import com.config.demo.birds.models.Peacock;
-import com.config.demo.fish.models.Guppy;
+import com.config.demo.birds.models.Eagle;
 import com.config.demo.fish.models.Salmon;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class ExampleBean {
-  
+public class CoreConfigBean {
+
   @Autowired
   private Salmon salmon;
-  
+
   @Autowired
-  private Guppy guppy;
-  
-  @Autowired
-  private Peacock peacock;
-  
+  private Eagle eagle;
+
+
   public void printObjects() {
 
     final String salmon = this.salmon.getClass()
                                      .getSimpleName();
-    final String guppy = this.guppy.getClass()
+    final String guppy = this.eagle.getClass()
                                    .getSimpleName();
-    final String peacock = this.peacock.getClass()
-                                       .getSimpleName();
 
     System.out.printf(
          "\n╔═════════════════════════════╗\n" +
@@ -31,10 +26,9 @@ public class ExampleBean {
               "╠═════════════════════════════╣\n" +
               "║ --> %s                  ║\n" +
               "║ --> %s                   ║\n" +
-              "║ --> %s                 ║\n" +
               "╚═════════════════════════════╝\n"
          ,
-         "EXAMPLE-BEAN-OBJECTS", salmon, guppy, peacock
+         "EXAMPLE-BEAN-OBJECTS", salmon, guppy
                      );
   }
 }
